@@ -13,5 +13,8 @@ air_dens=1.22521;   %[Kg/m^3] air density
 g       =9.8;       %[m/s^2] gravity constant
 wind_speed=0;       %[m/s]
 sim_time=1220;      %[s]
+
 slope_road=0;       %[%]
 angle_road=atan(slope_road/100);%[tang(degrees)]
+
+sim('first_model_simulink',sim_time);
