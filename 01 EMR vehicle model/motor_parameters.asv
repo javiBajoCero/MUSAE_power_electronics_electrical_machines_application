@@ -1,0 +1,18 @@
+clc;
+clear;
+
+%%%%motor parameters
+rated_power         =32000;%[w]
+rated_voltage       =400;%[v]
+rated_current       =89.9;%[A]
+rated_speed         =2840;%[rpm]
+max_speed           =6000;%[rpm]
+emf_constant        =1.2396;%[Vs/rad]
+winding_resistance  =0.35;%[ohms]
+winding_inductance  =6.5e-3;%[mH]
+
+vehicle_mass        =1000;%[kg]
+
+sim_time=1220;      %[s]
+
+%sim('EMR_vehicle_model.slx',sim_time);
