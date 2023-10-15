@@ -12,7 +12,7 @@ f_r     =0.017;     %rolling resistance coeficient
 air_dens=1.22521;   %[Kg/m^3] air density
 g       =9.8;       %[m/s^2] gravity constant
 wind_speed=0;       %[m/s]
-sim_time=5.9;      %[s]
+sim_time=5.9*2;      %[s]
 
 slope_road=0;       %[%]
 angle_road=atan(slope_road/100);%[tang(degrees)]
@@ -21,9 +21,6 @@ sim('first_model_simulink',sim_time);
 
 
 %%QUIZ question 1: 0-100km/h 5,9seconds slope0%
-
-%% see in simulink displays
-
 %areodinamic drag:
 %peak force=
 %peak power=
@@ -49,5 +46,4 @@ sim('first_model_simulink',sim_time);
 %peak power=
 %energy=
 
-%total distance covered= 0.08194 [km]
-%acceleration= 4,708 [m/s^2]
+%
