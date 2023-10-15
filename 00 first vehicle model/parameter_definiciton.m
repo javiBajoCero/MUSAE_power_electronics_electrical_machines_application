@@ -14,12 +14,12 @@ g       =9.8;       %[m/s^2] gravity constant
 wind_speed=0;       %[m/s]
 sim_time=5.9;      %[s]
 
-slope_road=0;       %[%]
-angle_road=atan(slope_road/100);%[tang(degrees)]
 
 %%QUIZ question 1: 0-100km/h 5,9seconds slope0%
 velocityQuiz1=100;%Km/h
 slope_road=0;
+angle_road=atan(slope_road/100);%[tang(degrees)]
+
 out=sim('first_model_simulink',sim_time);
 fprintf('###########################################QUESTION1 (0-100)\n');
 fprintf('----------aerodynamical drag:\n');
@@ -52,18 +52,97 @@ fprintf('-total distance covered=%.4f [Km]\n', out.distanceKm.Data(out.distanceK
 fprintf('-acceleration=%.4f [m/s^2]\n', out.acceleration.Data(out.acceleration.Length));
 fprintf('###########################################\n');
 
-% %%QUIZ question 2: 0-120km/h 5,9seconds slope 0%
-% velocityQuiz1=120;%Km/h
-% slope_road=0;
-% 
-% %%QUIZ question 3: 0-80km/h 5,9seconds slope 7,2%
-% velocityQuiz1=80;%Km/h
-% slope_road=7.2;
-% 
-% %%QUIZ question 4: 0-5km/h 5,9seconds slope 33%
-% velocityQuiz1=5;%Km/h
-% slope_road=33;
+ %%QUIZ question 2: 0-120km/h 5,9seconds slope 0%
+ velocityQuiz1=120;%Km/h
+slope_road=0;
+angle_road=atan(slope_road/100);%[tang(degrees)]
 
+ out=sim('first_model_simulink',sim_time);
+fprintf('###########################################QUESTION2 (0-120)\n');
+fprintf('----------aerodynamical drag:\n');
+fprintf('-Peak force=%.4f [N]\n', out.aero_drag_peak_force.Data(out.aero_drag_peak_force.Length));
+fprintf('-Peak power=%.4f [kW]\n', out.aero_drag_peak_power.Data(out.aero_drag_peak_power.Length));
+
+fprintf('----------rolling friction:\n');
+fprintf('-Peak force=%.4f [N]\n', out.rolling_friction_peak_force.Data(out.rolling_friction_peak_force.Length));
+fprintf('-Peak power=%.4f [kW]\n', out.rolling_friction_peak_power.Data(out.rolling_friction_peak_power.Length));
+
+fprintf('----------hill climbing:\n');
+fprintf('-Peak force=%.4f [N]\n', out.hill_climbing_peak_force.Data(out.hill_climbing_peak_force.Length));
+fprintf('-Peak power=%.4f [kW]\n', out.hill_climbing_peak_power.Data(out.hill_climbing_peak_power.Length));
+
+fprintf('----------m*a:\n');
+fprintf('-Peak force=%.4f [N]\n', out.ma_peak_force.Data(out.ma_peak_force.Length));
+fprintf('-Peak power=%.4f [kW]\n', out.ma_peak_power.Data(out.ma_peak_power.Length));
+
+fprintf('----------tractive:\n');
+fprintf('-Peak force=%.4f [N]\n', out.tractive_peak_force.Data(out.tractive_peak_force.Length));
+fprintf('-Peak power=%.4f [kW]\n', out.tractive_peak_power.Data(out.tractive_peak_power.Length));
+
+fprintf('\n');
+fprintf('-acceleration=%.4f [m/s^2]\n', out.acceleration.Data(out.acceleration.Length));
+fprintf('###########################################\n');
+
+
+%%QUIZ question 3: 0-80km/h 5,9seconds slope 7,2%
+velocityQuiz1=80;%Km/h
+slope_road=7.2;
+angle_road=atan(slope_road/100);%[tang(degrees)]
+ out=sim('first_model_simulink',sim_time);
+fprintf('###########################################QUESTION3 (0-80) 7,2%\n');
+fprintf('----------aerodynamical drag:\n');
+fprintf('-Peak force=%.4f [N]\n', out.aero_drag_peak_force.Data(out.aero_drag_peak_force.Length));
+fprintf('-Peak power=%.4f [kW]\n', out.aero_drag_peak_power.Data(out.aero_drag_peak_power.Length));
+
+fprintf('----------rolling friction:\n');
+fprintf('-Peak force=%.4f [N]\n', out.rolling_friction_peak_force.Data(out.rolling_friction_peak_force.Length));
+fprintf('-Peak power=%.4f [kW]\n', out.rolling_friction_peak_power.Data(out.rolling_friction_peak_power.Length));
+
+fprintf('----------hill climbing:\n');
+fprintf('-Peak force=%.4f [N]\n', out.hill_climbing_peak_force.Data(out.hill_climbing_peak_force.Length));
+fprintf('-Peak power=%.4f [kW]\n', out.hill_climbing_peak_power.Data(out.hill_climbing_peak_power.Length));
+
+fprintf('----------m*a:\n');
+fprintf('-Peak force=%.4f [N]\n', out.ma_peak_force.Data(out.ma_peak_force.Length));
+fprintf('-Peak power=%.4f [kW]\n', out.ma_peak_power.Data(out.ma_peak_power.Length));
+
+fprintf('----------tractive:\n');
+fprintf('-Peak force=%.4f [N]\n', out.tractive_peak_force.Data(out.tractive_peak_force.Length));
+fprintf('-Peak power=%.4f [kW]\n', out.tractive_peak_power.Data(out.tractive_peak_power.Length));
+
+fprintf('\n');
+fprintf('-acceleration=%.4f [m/s^2]\n', out.acceleration.Data(out.acceleration.Length));
+fprintf('###########################################\n');
+
+%%QUIZ question 4: 0-5km/h 5,9seconds slope 33%
+velocityQuiz1=5;%Km/h
+slope_road=33;
+angle_road=atan(slope_road/100);%[tang(degrees)]
+ out=sim('first_model_simulink',sim_time);
+fprintf('###########################################QUESTION4 (0-5) 33%\n');
+fprintf('----------aerodynamical drag:\n');
+fprintf('-Peak force=%.4f [N]\n', out.aero_drag_peak_force.Data(out.aero_drag_peak_force.Length));
+fprintf('-Peak power=%.4f [kW]\n', out.aero_drag_peak_power.Data(out.aero_drag_peak_power.Length));
+
+fprintf('----------rolling friction:\n');
+fprintf('-Peak force=%.4f [N]\n', out.rolling_friction_peak_force.Data(out.rolling_friction_peak_force.Length));
+fprintf('-Peak power=%.4f [kW]\n', out.rolling_friction_peak_power.Data(out.rolling_friction_peak_power.Length));
+
+fprintf('----------hill climbing:\n');
+fprintf('-Peak force=%.4f [N]\n', out.hill_climbing_peak_force.Data(out.hill_climbing_peak_force.Length));
+fprintf('-Peak power=%.4f [kW]\n', out.hill_climbing_peak_power.Data(out.hill_climbing_peak_power.Length));
+
+fprintf('----------m*a:\n');
+fprintf('-Peak force=%.4f [N]\n', out.ma_peak_force.Data(out.ma_peak_force.Length));
+fprintf('-Peak power=%.4f [kW]\n', out.ma_peak_power.Data(out.ma_peak_power.Length));
+
+fprintf('----------tractive:\n');
+fprintf('-Peak force=%.4f [N]\n', out.tractive_peak_force.Data(out.tractive_peak_force.Length));
+fprintf('-Peak power=%.4f [kW]\n', out.tractive_peak_power.Data(out.tractive_peak_power.Length));
+
+fprintf('\n');
+fprintf('-acceleration=%.4f [m/s^2]\n', out.acceleration.Data(out.acceleration.Length));
+fprintf('###########################################\n');
 
 
 
