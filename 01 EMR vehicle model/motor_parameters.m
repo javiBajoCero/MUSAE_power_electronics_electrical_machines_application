@@ -29,13 +29,12 @@ slope_road=0;
 angle_road=atan(slope_road/100);%[tang(degrees)]
 
 %P speed controler
-tau_speed=1;        %seconds
+tau_speed=0.1;        %seconds
 Kp_speed=m_v/tau_speed;
 Ki_speed=0;
 
 %P speed controler
-tau_current=1;        %seconds
-risingtime=1;
+risingtime=0.1;               %seconds
 Kp_current=(log(9)/risingtime)*winding_inductance;
 Ki_current=(log(9)/risingtime)*winding_resistance;
 
