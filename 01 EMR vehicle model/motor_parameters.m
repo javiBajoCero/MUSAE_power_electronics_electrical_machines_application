@@ -33,8 +33,8 @@ tau_speed=0.1;        %seconds
 Kp_speed=m_v/tau_speed;
 Ki_speed=0;
 
-%P speed controler
-risingtime=0.1;               %seconds
+%P current controler
+risingtime=0.5;               %seconds
 Kp_current=(log(9)/risingtime)*winding_inductance;
 Ki_current=(log(9)/risingtime)*winding_resistance;
 
