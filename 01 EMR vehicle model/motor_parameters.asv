@@ -29,10 +29,10 @@ slope_road=0;
 angle_road=atan(slope_road/100);%[tang(degrees)]
 
 %PI speed controler
-tau_speed=1;        %second
-Kp_speed=m_v/tau_speed;
+tau_speed=1;%second
+Kp_speed=100;
 Ki_speed=0;
 
 
-sim_time=5;        %seconds
+sim_time=1;        %seconds
 sim('EMR_vehicle_model.slx',sim_time);
