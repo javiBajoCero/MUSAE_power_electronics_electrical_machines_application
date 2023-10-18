@@ -16,6 +16,7 @@ sim_time=5.9;      %[s]
 
 
 %%QUIZ question 1: 0-100km/h 5,9seconds slope0%
+ramp_or_constant=1;
 velocityQuiz1=100;%Km/h
 slope_road=0;
 angle_road=atan(slope_road/100);%[tang(degrees)]
@@ -53,6 +54,7 @@ fprintf('-acceleration=%.4f [m/s^2]\n', out.acceleration.Data(out.acceleration.L
 fprintf('###########################################\n');
 
  %%QUIZ question 2: 0-120km/h 5,9seconds slope 0%
+ ramp_or_constant=0;
  velocityQuiz1=120;%Km/h
 slope_road=0;
 angle_road=atan(slope_road/100);%[tang(degrees)]
@@ -85,6 +87,7 @@ fprintf('###########################################\n');
 
 
 %%QUIZ question 3: 0-80km/h 5,9seconds slope 7,2%
+ramp_or_constant=0;
 velocityQuiz1=80;%Km/h
 slope_road=7.2;
 angle_road=atan(slope_road/100);%[tang(degrees)]
@@ -115,6 +118,7 @@ fprintf('-acceleration=%.4f [m/s^2]\n', out.acceleration.Data(out.acceleration.L
 fprintf('###########################################\n');
 
 %%QUIZ question 4: 0-5km/h 5,9seconds slope 33%
+ramp_or_constant=0;
 velocityQuiz1=5;%Km/h
 slope_road=33;
 angle_road=atan(slope_road/100);%[tang(degrees)]
