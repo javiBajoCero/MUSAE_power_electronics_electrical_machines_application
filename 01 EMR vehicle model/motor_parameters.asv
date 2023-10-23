@@ -24,27 +24,27 @@ wind_speed=0;       %[m/s]
 
 
 %more parameters
-%VDC=48;                                             %[volts]
+VDC=48;                                             %[volts]
 slope_road=0;
 angle_road=atan(slope_road/100);                    %[tang(degrees)]
 
 %P speed controler
-tau_speed=0.3;                                      %seconds
+tau_speed=0.1;                                      %seconds
 Kp_speed=m_v/tau_speed;
 Ki_speed=0;
 
 %PI current controler
-risingtime=0.3;                                     %seconds , arbitrary number 
+risingtime=1;                                     %seconds , arbitrary number 
 Kp_current=(log(9)/risingtime)*winding_inductance;
 Ki_current=(log(9)/risingtime)*winding_resistance;
 % 
 upper_current_limit=89.5;                   % [Amps]
 lower_current_limit=-upper_current_limit;   % [Amps]
 
-upper_volt_limit=400;                       % [Volts]
-lower_volt_limit=-upper_volt_limit;         % [Volts]
+upper_volt_limit=400;
+upper_volt_limit=-upper_volt_limit;
 
-speed_slope=(100/3.6)/5.9;                  %m/s/s
+speed_slope=(100/3.6)/5.9;                          %m/s/s
 
-sim_time=10;                                %seconds
+sim_time=10;                                         %seconds
 sim('EMR_vehicle_model.slx',sim_time);
