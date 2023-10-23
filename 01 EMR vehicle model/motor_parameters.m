@@ -1,5 +1,5 @@
-% clc;
-% clear;
+clc;
+clear;
 
 %%%%motor parameters
 rated_power         =32000;%[w]
@@ -46,5 +46,5 @@ lower_volt_limit=-upper_volt_limit;         % [Volts]
 
 speed_slope=(100/3.6)/5.9;                  %m/s/s
 
-sim_time=10;                                %seconds
+sim_time=1300;                                %seconds
 sim('EMR_vehicle_model.slx',sim_time);
