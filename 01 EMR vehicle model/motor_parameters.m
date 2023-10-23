@@ -37,14 +37,14 @@ Ki_speed=0;
 risingtime=0.3;                                     %seconds , arbitrary number 
 Kp_current=(log(9)/risingtime)*winding_inductance;
 Ki_current=(log(9)/risingtime)*winding_resistance;
-% 
+Kantiwind=Kp_current;
+
 upper_current_limit=89.5;                   % [Amps]
 lower_current_limit=-upper_current_limit;   % [Amps]
-
 upper_volt_limit=400;                       % [Volts]
 lower_volt_limit=-upper_volt_limit;         % [Volts]
 
 speed_slope=(100/3.6)/5.9;                  %m/s/s
 
-sim_time=1300;                                %seconds
+sim_time=1500;                                %seconds
 sim('EMR_vehicle_model.slx',sim_time);
