@@ -24,7 +24,7 @@ wind_speed=0;       %[m/s]
 
 
 %more parameters
-%VDC=48;                                             %[volts]
+VDC=400;                                             %[volts]
 slope_road=0;
 angle_road=atan(slope_road/100);                    %[tang(degrees)]
 
@@ -43,6 +43,8 @@ upper_current_limit=89.5;                   % [Amps]
 lower_current_limit=-upper_current_limit;   % [Amps]
 upper_volt_limit=400;                       % [Volts]
 lower_volt_limit=-upper_volt_limit;         % [Volts]
+
+converter_efficiency=0.95;                  % [%1]
 
 speed_slope=(100/3.6)/5.9;                  %m/s/s
 
