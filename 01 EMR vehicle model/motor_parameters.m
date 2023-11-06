@@ -25,6 +25,7 @@ wind_speed=0;       %[m/s]
 
 %more parameters
 VDC=400;                                             %[volts]
+Rbat=0.1;                                              %[Ohms]
 slope_road=0;
 angle_road=atan(slope_road/100);                    %[tang(degrees)]
 
