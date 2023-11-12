@@ -4,7 +4,7 @@ clear;
 %%%%motor parameters
 rated_power         =32000;%[w]
 rated_voltage       =400;%[v]
-rated_current       =89.9;%[A]
+rated_current       =89.5;%[A]
 rated_speed         =2840;%[rpm]
 max_speed           =6000;%[rpm]
 emf_constant        =1.2396;%[Vs/rad]
@@ -40,9 +40,9 @@ Kp_current=(log(9)/risingtime)*winding_inductance;
 Ki_current=(log(9)/risingtime)*winding_resistance;
 Kantiwind=Kp_current;
 
-upper_current_limit=89.5;                   % [Amps]
+upper_current_limit=rated_current;                   % [Amps]
 lower_current_limit=-upper_current_limit;   % [Amps]
-upper_volt_limit=400;                       % [Volts]
+upper_volt_limit=rated_voltage;                       % [Volts]
 lower_volt_limit=-upper_volt_limit;         % [Volts]
 
 converter_efficiency=0.95;                  % [%1]
@@ -50,4 +50,13 @@ converter_efficiency=0.95;                  % [%1]
 speed_slope=(100/3.6)/5.9;                  %m/s/s
 
 sim_time=1500;                                %seconds
-sim('EMR_vehicle_model.slx',sim_time);
+%sim('EMR_vehicle_model.slx',sim_time);
+
+
+
+fprintf('###########################################quiz 2 question1\n');
+fprintf('----------supposing maximum current , which is the max torque of the motor?:\n');
+fprintf('-(analytically) max T=%.4f [N m]\n', emf_constant*rated_current);
+fprintf('###########################################quiz 2 question 2\n');
+fprintf('----------supposing maximum volt , which is the max rotating speed of the motor?:\n');
+fprintf('-(analytically) max ωm=%.4f [rad/s]\n', rated_voltage/emf_constant);
