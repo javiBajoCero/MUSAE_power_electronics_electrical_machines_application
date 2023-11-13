@@ -35,7 +35,7 @@ Kp_speed=m_v/tau_speed;
 Ki_speed=0;
 
 %PI current controler
-risingtime=0.3;                                     %seconds , arbitrary number 
+risingtime=0.03;                                     %seconds , arbitrary number 
 Kp_current=(log(9)/risingtime)*winding_inductance;
 Ki_current=(log(9)/risingtime)*winding_resistance;
 Kantiwind=Kp_current;

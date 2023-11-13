@@ -1,7 +1,7 @@
 clc;
 clear;
 
-%%%%motor parameters EMRAX 268
+%%%%motor parameters
 rated_power         =32000;%[w]
 rated_voltage       =400;%[v]
 rated_current       =89.5;%[A]
@@ -40,9 +40,9 @@ Ki_speed=0;
 %PI current controler
 risingtime=0.03;                                     %seconds , arbitrary number 
 Kp_current_d=(log(9)/risingtime)*Ld;
-Ki_current_d=(log(9)/risingtime)*winding_resistance;
+Ki_current_d=(log(9)/risingtime)*Ld;
 Kp_current_q=(log(9)/risingtime)*Lq;
-Ki_current_q=(log(9)/risingtime)*winding_resistance;
+Ki_current_q=(log(9)/risingtime)*Lq;
 
 
 converter_efficiency=0.95;                  % [%1]
