@@ -41,6 +41,7 @@ Ki_speed=0;
 risingtime=0.03;                                     %seconds , arbitrary number 
 Kp_current_d=(log(9)/risingtime)*Ld;
 Ki_current_d=(log(9)/risingtime)*winding_resistance;
+
 Kp_current_q=(log(9)/risingtime)*Lq;
 Ki_current_q=(log(9)/risingtime)*winding_resistance;
 
