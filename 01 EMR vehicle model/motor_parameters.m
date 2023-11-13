@@ -63,4 +63,4 @@ fprintf('###########################################quiz 2 question 2\n');
 fprintf('----------Supposing that the maximum voltage you can apply to the motor is limited by its rated value, which is the maximum rotating speed of the motor?:\n');
 fprintf('-(analytically) max ωm=%.4f [rad/s]\n', rated_voltage/emf_constant);
 fprintf('----------Neglecting the rolling friction and the aerodynamical drag, and supposing a slope of the road to be 0, compute now the maximum speed of the vehicle:\n');
-fprintf('-(analytically) max v=%.4f [km/h]\n', (rated_voltage/emf_constant)*r_w*3.6);
+fprintf('-(analytically) max v=%.4f [km/h]\n', (rated_voltage/emf_constant)*r_w*3.6/k_gear);
