@@ -55,8 +55,12 @@ sim_time=1500;                                %seconds
 
 
 fprintf('###########################################quiz 2 question1\n');
-fprintf('----------supposing maximum current , which is the max torque of the motor?:\n');
+fprintf('----------Supposing that the maximum current in the motor is limited by its rated value, which is the maximum torque of the motor?:\n');
 fprintf('-(analytically) max T=%.4f [N m]\n', emf_constant*rated_current);
+fprintf('----------Neglecting the rolling friction and the aerodynamical drag, and supposing a slope of the road to be 0, compute now the maximum acceleration of the vehicle:\n');
+fprintf('-(analytically) max a=%.4f [m/s2]\n', ((emf_constant*rated_current)*k_gear/r_w)/m_v );
 fprintf('###########################################quiz 2 question 2\n');
-fprintf('----------supposing maximum volt , which is the max rotating speed of the motor?:\n');
+fprintf('----------Supposing that the maximum voltage you can apply to the motor is limited by its rated value, which is the maximum rotating speed of the motor?:\n');
 fprintf('-(analytically) max ωm=%.4f [rad/s]\n', rated_voltage/emf_constant);
+fprintf('----------Neglecting the rolling friction and the aerodynamical drag, and supposing a slope of the road to be 0, compute now the maximum speed of the vehicle:\n');
+fprintf('-(analytically) max v=%.4f [km/h]\n', (rated_voltage/emf_constant)*r_w*3.6);
