@@ -9,8 +9,7 @@ rated_voltage       =110;%[vdc]
 rated_current       =400;%[Arms]
 rated_speed         =6500;%[rpm] no field weakening
 max_speed           =8000;%[rpm] for few seconds with field weakening
-lambdam=0.008;%[]
-emf_constant        =lambdam*polepairs;     %1.2396;%[Vs/rad]
+lambdam=0.072;%[]
 winding_resistance  =0.8e-3;%[ohms] 25 degrees
 Ld  =5.4e-6;%[H]
 Lq  =6.0e-6;%[H]
@@ -20,7 +19,7 @@ Lq  =6.0e-6;%[H]
 %%vehicle parameters
 m_v     =1000;      %[Kg] vehicle_mass
 r_w     =0.26;      %[m] tire_effective_rolling_radius
-k_gear  =5;         %reduction_gear
+k_gear  =5;         %reduction_gear modificado
 C_d     =0.35;      %drag coefficient
 A_f     =2;         %[m^2]frontal area   
 f_r     =0.017;     %rolling resistance coeficient
@@ -31,28 +30,33 @@ wind_speed=0;       %[m/s]
 
 
 %more parameters
-VDC=110;                                             %[volts]
+VDC=800;                                             %[volts]
 Rbat=0.1;                                              %[Ohms]
 slope_road=0;
 angle_road=atan(slope_road/100);                    %[tang(degrees)]
 
 %P speed controler
-tau_speed=0.3;                                      %seconds
+tau_speed=1; %from 0% to 63% in those seconds?
 Kp_speed=m_v/tau_speed;
 Ki_speed=0;
 
 %PI current controler
-risingtime=0.03;                                     %seconds , arbitrary number 
+risingtime=tau_speed/10;                                     %seconds , arbitrary number 
 Kp_current_d=(log(9)/risingtime)*Ld;
 Ki_current_d=(log(9)/risingtime)*winding_resistance;
 
 Kp_current_q=(log(9)/risingtime)*Lq;
 Ki_current_q=(log(9)/risingtime)*winding_resistance;
 
-
+Kantiwind_d=Kp_current_d;
+Kantiwind_q=Kp_current_q;
+upper_volt_limit=110;
+lower_volt_limit=-upper_volt_limit;
 converter_efficiency=0.95;                  % [%1]
 
+upper_current_limit=800;
+lower_current_limit=-upper_current_limit;
 speed_slope=(100/3.6)/5.9;                  %m/s/s
 
-sim_time=1500;                                %seconds
-sim('EMR_vehicle_model.slx',sim_time);
+sim_time=7;%1500;                                %seconds
+sim('EMR_vehicle_model_EMRAX188.slx',sim_time);
