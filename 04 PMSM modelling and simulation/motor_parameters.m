@@ -58,5 +58,5 @@ upper_current_limit=400;
 lower_current_limit=-upper_current_limit;
 speed_slope=(100/3.6)/5.9;                  %m/s/s
 
-sim_time=7*10;%1500;                                %seconds
+sim_time=1500;%7*10;%1500;                                %seconds
 sim('EMR_vehicle_model_EMRAX188.slx',sim_time);
