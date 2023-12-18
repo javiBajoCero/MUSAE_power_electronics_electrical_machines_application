@@ -32,16 +32,16 @@ wind_speed=0;       %[m/s]
 %more parameters
 VDC=800;                                             %[volts]
 Rbat=0.1;                                              %[Ohms]
-slope_road=0;
+slope_road=90;
 angle_road=atan(slope_road/100);                    %[tang(degrees)]
 
 %P speed controler
-tau_speed=1; %from 0% to 63% in those seconds?
+tau_speed=1.5; %from 0% to 63% in those seconds?
 Kp_speed=m_v/tau_speed;
 Ki_speed=0;
 
 %PI current controler
-risingtime=tau_speed/10;                                     %seconds , arbitrary number 
+risingtime=tau_speed/10;                        %seconds from 10% to 90%
 Kp_current_d=(log(9)/risingtime)*Ld;
 Ki_current_d=(log(9)/risingtime)*winding_resistance;
 
@@ -54,9 +54,9 @@ upper_volt_limit=110;
 lower_volt_limit=-upper_volt_limit;
 converter_efficiency=0.95;                  % [%1]
 
-upper_current_limit=800;
+upper_current_limit=400;
 lower_current_limit=-upper_current_limit;
 speed_slope=(100/3.6)/5.9;                  %m/s/s
 
-sim_time=7;%1500;                                %seconds
+sim_time=7*10;%1500;                                %seconds
 sim('EMR_vehicle_model_EMRAX188.slx',sim_time);
